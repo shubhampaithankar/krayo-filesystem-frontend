@@ -19,8 +19,9 @@ const Auth = ({ user, setUser }) => {
     }
 
     useEffect(() => {
-        setUser(sessionStorage.getItem('user'))
+        setUser(JSON.parse(sessionStorage.getItem('user')))
     })
+    
     return (
         user ? <Navigate to='/file-system' /> : (
             <main className='container-fluid'>

@@ -1,17 +1,15 @@
-import AWS from 'aws-sdk'
+import S3 from 'react-aws-s3-typescript'
 import config from '../config.json'
 
-const S3_BUCKET ='krayo-filestorage'
-const REGION ='ap-south-1'
+window.Buffer = window.Buffer || require("buffer").Buffer;
 
-AWS.config.update({
+const bucketConfig = {
+    bucketName: 'krayo-filestorage',
+    region: 'ap-south-1',
     accessKeyId: config.awsAccessKey,
     secretAccessKey: config.awsSecretAccessKey
-})
+}
 
-const bucket = new AWS.S3({
-    params: { Bucket: S3_BUCKET},
-    region: REGION,
-})
+const ReactS3Client = new S3(bucketConfig)
 
-export { bucket }
+export default ReactS3Client
