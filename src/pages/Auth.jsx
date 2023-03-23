@@ -24,11 +24,11 @@ const Auth = ({ user, setUser }) => {
     
     return (
         user ? <Navigate to='/file-system' /> : (
-            <main className='container-fluid'>
+            <div className='container-fluid'>
                 <div className='d-flex align-items-center justify-content-center' style={{ height: '100%' }}>
                     <Button variant='contained' onClick={handleClick}>Sign in with Google</Button>
                 </div>
-            </main>
+            </div>
         )
     )
 }

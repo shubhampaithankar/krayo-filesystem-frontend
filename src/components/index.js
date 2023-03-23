@@ -1,5 +1,6 @@
 import Loader from "./Loader"
 import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
+import Modal from "./Modal"
 
-export { Loader, Navbar, Sidebar }
+export { Loader, Modal, Navbar, Sidebar }
