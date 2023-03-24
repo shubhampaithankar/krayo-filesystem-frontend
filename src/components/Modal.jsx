@@ -19,8 +19,12 @@ const style = {
 export const ModalContext = createContext()
 
 const BasicModal = () => {
-  const { modalOpen, setModalOpen, modalTitle, modalBody } = useContext(ModalContext)
-  const handleClose = () => setModalOpen(false)
+  const { modalOpen, setModalOpen, setModalTitle, setModalBody, modalTitle, modalBody } = useContext(ModalContext)
+  const handleClose = () => {
+    setModalTitle('')
+    setModalBody('')
+    setModalOpen(false)
+  }
 
   return (
       <Modal
